@@ -7,14 +7,14 @@ import org.neo4j.graphdb.factory.GraphDatabaseFactory
 
 @Accessors
 class GraphDatabaseProvider {
-
+	static String PATH = "/home/fernando/apps/neo4j-community-3.0.4/data/databases"
 	static GraphDatabaseProvider instance
 	
 	GraphDatabaseService graphDb
 	
 	private new() {
 		val GraphDatabaseFactory dbFactory = new GraphDatabaseFactory
-		graphDb = dbFactory.newEmbeddedDatabase(new File("/home/fernando/apps/neo4j-community-3.0.1/data/databases/graph.db"))
+		graphDb = dbFactory.newEmbeddedDatabase(new File(PATH + "/graph.db"))
 	}
 	
 	def static instance() {
