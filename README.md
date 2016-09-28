@@ -23,6 +23,7 @@ ACTED_IN con atributos roles que terminan trasladándose al modelo de objetos co
 $ ./neo4j start
 ```
 
+* Abrir un Navegador e ingresar como URL: http://localhost:7474
 * Ejecutar el script que carga el grafo de películas
 
 ![video](video/crearPelis.gif)
