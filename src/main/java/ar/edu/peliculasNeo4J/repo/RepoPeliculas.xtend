@@ -53,10 +53,8 @@ class RepoPeliculas extends AbstractRepoNeo4J {
 			id = nodePelicula.id
 			titulo = nodePelicula.getProperty("title") as String
 			frase = nodePelicula.getProperty("tagline", "") as String
-			val released = nodePelicula.getProperty("released", null) as Long
-			if (released != null) {
-				anio = released.intValue
-			}
+			val released = nodePelicula.getProperty("released", 0L) as Long
+			anio = released.intValue
 			if (deep) { 
 				val rel_actuaron = nodePelicula.getRelationships(RelacionesPelicula.ACTED_IN)
 				personajes = rel_actuaron.map [
@@ -116,7 +114,7 @@ class RepoPeliculas extends AbstractRepoNeo4J {
 	}
 
 	private def void actualizarPelicula(Pelicula pelicula, Node nodePelicula) {
-		nodePelicula => [
+		nodePelicula => [ 
 			setProperty("title", pelicula.titulo)
 			setProperty("tagline", pelicula.frase)
 			setProperty("released", new Long(pelicula.anio))
@@ -126,6 +124,8 @@ class RepoPeliculas extends AbstractRepoNeo4J {
 			pelicula.personajes.forEach [ personaje |
 				val Node nodoActor = RepoActores.instance.getNodoActorById(personaje.actor.id)
 				val relPersonaje = nodoActor.createRelationshipTo(it, RelacionesPelicula.ACTED_IN)
+				// para dar clase 
+				// creamos ambas relaciones it.createRelationshipTo(nodoActor, RelacionesPelicula.ACTED_IN)
 				
 				// Manganeta para usar arrays porque el [] se confunde con el bloque
 				val roles = personaje.roles		

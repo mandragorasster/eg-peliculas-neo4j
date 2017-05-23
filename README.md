@@ -40,6 +40,26 @@ $ ./neo4j stop
 static String PATH = "/home/fernando/apps/neo4j-community-3.0.4/data/databases"
 ```
 
+Si estás en Windows recordá usar la doble barra, por ejemplo
+
+``` Xtend
+static String PATH = "C://Users//JD//Neo4j/data/databases"
+```
+
+tiene que coincidir con el path donde está el servicio (sin el graph.db).
+
+* En el pom.xml, verificá que la dependencia de neo4j coincida con la versión que vos te bajaste
+
+``` XML
+<dependency>
+	<groupId>org.neo4j</groupId>
+	<artifactId>neo4j</artifactId>
+	<version>3.0.4</version>
+</dependency>
+```
+
+En este caso 3.0.4 debería ser la versión de Neo4J que instalaste en tu máquina, si no es así cambiá la versión en el pom para que tome por ejemplo la 3.2.0. 
+
 * Botón derecho sobre el archivo "Peliculas Neo4J.launch" y Run, si respetaste el nombre del proyecto: eg-peliculas-neo4j
 
 ![video](video/demoApp.gif)
@@ -61,5 +81,8 @@ Caused by: org.neo4j.kernel.StoreLockException: Store and its lock file has been
 
 Es que tenés que detener el servicio Neo4J, que en su versión Community no permite acceso por más de una aplicación a la vez.
 
+* Problemas de versión: si la versión de la dependencia del pom no coincide con la de Neo4J que descargaste te va a aparecer un mensaje de error. Subí la versión para que estén sincronizadas con la que descargaste asegurando de que tengas buena Internet, y volvé a levantar la aplicación.
+
 * Si no ves ninguna película al comenzar la aplicación, revisá el PATH adonde está apuntando la base de grafos de películas
+
 
