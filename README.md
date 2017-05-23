@@ -43,10 +43,10 @@ static String PATH = "/home/fernando/apps/neo4j-community-3.0.4/data/databases"
 Si estás en Windows recordá usar la doble barra, por ejemplo
 
 ``` Xtend
-static String PATH = "C://Users//JD//Neo4j/data/databases"
+static String PATH = "C://Users//JD//Neo4j//data"
 ```
 
-tiene que coincidir con el path donde está el servicio (sin el graph.db).
+tiene que coincidir con el path donde está el servicio (sin considerar que haya que agregarle luego "graph.db" ni nada).
 
 * En el pom.xml, verificá que la dependencia de neo4j coincida con la versión que vos te bajaste
 
