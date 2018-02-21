@@ -1,6 +1,6 @@
 # Películas - Proyecto Xtend contra una base Neo4J
 
-[![Build Status](https://travis-ci.org/uqbar-project/eg-peliculas-neo4j.svg?branch=master)](https://travis-ci.org/uqbar-project/eg-peliculas-neo4j)
+[![Build Status](https://travis-ci.org/uqbar-project/eg-peliculas-neo4j.svg?branch=ogm)](https://travis-ci.org/uqbar-project/eg-peliculas-neo4j)
 
 ## Objetivo
 Mostrar la integración entre una app hecha en JDK y Neo4J.
