@@ -39,6 +39,7 @@ class EditarPelicula {
 	}
 
 	def void eliminarPersonaje() {
+		repoPeliculas.eliminarPersonaje(personajeSeleccionado)
 		pelicula.eliminarPersonaje(personajeSeleccionado)
 	}
 	

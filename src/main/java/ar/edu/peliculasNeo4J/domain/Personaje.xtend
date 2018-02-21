@@ -42,4 +42,5 @@ class Personaje {
 			throw new UserException("Debe ingresar qué actor cumple ese personaje")
 		}
 	}
+	
 }

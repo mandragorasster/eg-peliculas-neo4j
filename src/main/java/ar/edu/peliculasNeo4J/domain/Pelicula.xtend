@@ -52,6 +52,7 @@ class Pelicula {
 	
 	def eliminarPersonaje(Personaje personaje) {
 		personajes.remove(personaje)
+		personaje.pelicula = null
 		firePropertyChanged(this, "personajes")
 	}
 	
