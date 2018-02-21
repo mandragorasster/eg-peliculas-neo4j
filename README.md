@@ -53,9 +53,7 @@ El objeto que crea las sesiones de Neo4J para hacer las consultas precisa saber 
 
 ![video](video/demoApp.gif)
 
-Las modificaciones que hagas impactarán en el grafo de películas (podés hacer consultas luego).
-
-![video](video/grafo2.gif)
+Como vemos, las modificaciones que hagas impactarán en el grafo de películas.
 
 
 > Una ventaja comparativa respecto a la conexión con el Driver nativo de Neo4J es que aquí podés navegar el grafo y utilizar la aplicación sin necesidad de cerrar una ventana u otra
