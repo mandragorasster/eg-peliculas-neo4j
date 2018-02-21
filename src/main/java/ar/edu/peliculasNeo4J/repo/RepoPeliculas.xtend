@@ -16,7 +16,7 @@ class RepoPeliculas extends AbstractRepoNeo4J {
 	private static RepoActores instance
 	
 	def static RepoActores getInstance() {
-		if (instance == null) {
+		if (instance === null) {
 			instance = new RepoActores
 		}
 		instance
@@ -85,7 +85,7 @@ class RepoPeliculas extends AbstractRepoNeo4J {
 		val transaction = graphDb.beginTx
 		try {
 			var Node nodoPelicula = null
-			if (pelicula.id == null) {
+			if (pelicula.id === null) {
 				nodoPelicula = graphDb.createNode
 				nodoPelicula.addLabel(labelPelicula)
 			} else {

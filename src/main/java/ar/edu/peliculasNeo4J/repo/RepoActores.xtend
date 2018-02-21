@@ -13,7 +13,7 @@ class RepoActores extends AbstractRepoNeo4J {
 	private static RepoActores instance
 	
 	def static RepoActores getInstance() {
-		if (instance == null) {
+		if (instance === null) {
 			instance = new RepoActores
 		}
 		instance

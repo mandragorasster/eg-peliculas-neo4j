@@ -5,7 +5,7 @@ import ar.edu.peliculasNeo4J.repo.RepoActores
 import ar.edu.peliculasNeo4J.repo.RepoPeliculas
 import ar.edu.peliculasNeo4J.ui.BuscarPeliculasWindow
 import org.uqbar.arena.Application
-import org.uqbar.commons.utils.ApplicationContext
+import org.uqbar.commons.applicationContext.ApplicationContext
 
 class PeliculasApplication extends Application {
 	

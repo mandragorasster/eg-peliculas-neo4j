@@ -14,7 +14,7 @@ class AbstractRepoNeo4J {
 	}
 
 	protected def void cerrarTransaccion(Transaction transaction) {
-		if (transaction != null) {
+		if (transaction !== null) {
 			transaction.close
 		}
 	}

@@ -3,10 +3,9 @@ package ar.edu.peliculasNeo4J.domain
 import java.util.ArrayList
 import java.util.List
 import org.eclipse.xtend.lib.annotations.Accessors
-import org.uqbar.commons.model.UserException
-import org.uqbar.commons.utils.Observable
-
-import static org.uqbar.commons.model.ObservableUtils.*
+import org.uqbar.commons.model.annotations.Observable
+import org.uqbar.commons.model.exceptions.UserException
+import static extension org.uqbar.commons.model.utils.ObservableUtils.*
 
 @Observable
 @Accessors
@@ -39,7 +38,7 @@ class Pelicula {
 	}
 	
 	def void validar() {
-		if (this.titulo == null || this.titulo.trim.equals("")) {
+		if (this.titulo === null || this.titulo.trim.equals("")) {
 			throw new UserException("Debe ingresar un título")
 		}
 		if (this.anio <= MINIMO_VALOR_ANIO) {

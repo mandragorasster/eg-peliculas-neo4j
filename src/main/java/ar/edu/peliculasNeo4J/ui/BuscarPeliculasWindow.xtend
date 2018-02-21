@@ -71,8 +71,7 @@ class BuscarPeliculasWindow extends SimpleWindow<BuscarPeliculas> {
 	 */
 	def protected createResultsGrid(Panel mainPanel) {
 		var table = new Table<Pelicula>(mainPanel, typeof(Pelicula)) => [
-			numberVisibleRows = 10
-			width = 650
+			numberVisibleRows = 12
 			items <=> "peliculas"
 			value <=> "peliculaSeleccionada"
 		]
@@ -89,19 +88,19 @@ class BuscarPeliculasWindow extends SimpleWindow<BuscarPeliculas> {
 	def void describeResultsGrid(Table<Pelicula> table) {
 		new Column<Pelicula>(table) => [
 			title = "Título"
-			fixedSize = 150
+			fixedSize = 200
 			bindContentsToProperty("titulo")
 		]
 
 		new Column<Pelicula>(table) => [
 			title = "Frase"
-			fixedSize = 200
+			fixedSize = 300
 			bindContentsToProperty("frase")
 		]
 
 		new Column<Pelicula>(table) => [
 			title = "Año"
-			fixedSize = 150
+			fixedSize = 100
 			bindContentsToProperty("anio")
 		]
 
