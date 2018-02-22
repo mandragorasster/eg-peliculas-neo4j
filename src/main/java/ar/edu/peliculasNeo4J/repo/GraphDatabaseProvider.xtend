@@ -12,7 +12,7 @@ class GraphDatabaseProvider {
 	//static String PATH = "/var/run/neo4j/data"
 	// b) desde el Neo4J Desktop, en "My Project", ingresar a "Database" y en la solapa "Logs"
 	//    dice dónde está el archivo graph.db
-	static String PATH = "/home/fernando/.config/Neo4j Desktop/Application/neo4jDatabases/database-083aa170-0ee2-420d-85ac-e4c3492eaf1c/installation-3.3.3/data/databases"
+	static String PATH = "/home/fernando/.config/Neo4j Desktop/Application/neo4jDatabases/database-9f813cc5-b60c-44b9-b76a-b92f23aaf001/installation-3.3.3/data/databases"
 	
 	static GraphDatabaseProvider instance
 	
