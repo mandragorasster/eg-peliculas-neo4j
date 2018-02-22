@@ -14,7 +14,7 @@ class AbstractRepoNeo4J {
 	 * NOTA: modificar el puerto 11002 por 7687
 	 * 
 	 */
-	Configuration configuration = new Configuration.Builder().uri("bolt://localhost:11002").credentials("neo4j", "laura").
+	Configuration configuration = new Configuration.Builder().uri("bolt://localhost").credentials("neo4j", "laura").
 		build()
 
 	SessionFactory sessionFactory = new SessionFactory(configuration, "ar.edu.peliculasNeo4J.domain")

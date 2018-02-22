@@ -39,13 +39,13 @@ $ ./neo4j stop
 * En el Eclipse, ingresar al archivo AbstractRepoNeo4J y verificar la configuración
 
 ``` Xtend
-	Configuration configuration = new Configuration.Builder().uri("bolt://localhost:11002").credentials("neo4j", "laura").
+	Configuration configuration = new Configuration.Builder().uri("bolt://localhost").credentials("neo4j", "laura").
 		build()
 
 	SessionFactory sessionFactory = new SessionFactory(configuration, "ar.edu.peliculasNeo4J.domain")
 ```
 
-En este caso estamos utilizando el puerto 11002 (el default es 7687, no debería ser necesario cambiarlo), el driver bolt (que recomendamos ya que es bastante liviano), y conectándonos como administradores de la base a neo4j y con contraseña "laura" (la que viene por defecto es neo4j pero a veces el Neo4J Desktop te obliga a cambiarla).
+En este caso estamos utilizando el puerto por defecto que es el 7687 (en caso de utilizar otro podemos especificarlo, por ejemplo "bolt://localhost:11002"), el driver bolt (que recomendamos ya que es bastante liviano), y conectándonos como administradores de la base a neo4j y con contraseña "laura" (la que viene por defecto es neo4j pero a veces el Neo4J Desktop te obliga a cambiarla).
 
 El objeto que crea las sesiones de Neo4J para hacer las consultas precisa saber el paquete de Java donde están las clases del dominio (en nuestro caso es "ar.edu.peliculasNeo4J.domain", estén atentos a mayúsculas y minúsculas porque es case-sensitive, de lo contrario les aparecerá un nefasto NullPointerException).
 
