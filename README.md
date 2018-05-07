@@ -30,12 +30,6 @@ $ ./neo4j start
 
 ![video](video/crearPelis.gif)
 
-* Bajar el servicio neo4j. Desde la carpeta bin hacer
-
-```
-$ ./neo4j stop
-```
-
 * En el Eclipse, ingresar al archivo AbstractRepoNeo4J y verificar la configuración
 
 ``` Xtend
