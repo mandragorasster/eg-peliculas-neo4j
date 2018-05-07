@@ -34,7 +34,7 @@ class EditarPeliculaWindow extends Dialog<EditarPelicula> {
 	override createMainTemplate(Panel mainPanel) {
 		val panelIzquierdo = new Panel(mainPanel)
 		super.createMainTemplate(panelIzquierdo)
-		this.createResultsGrid(mainPanel)
+		this.createResultsGrid(panelIzquierdo)
 	}
 
 	override protected createFormPanel(Panel panelIzquierdo) {
