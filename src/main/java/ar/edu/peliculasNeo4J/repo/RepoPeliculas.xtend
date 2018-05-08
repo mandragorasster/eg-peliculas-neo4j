@@ -70,7 +70,7 @@ class RepoPeliculas extends AbstractRepoNeo4J {
 		session.delete(personaje)
 	}
 	
-	def void saveOrUpdatePelicula(Pelicula pelicula) {
+	def void actualizarPelicula(Pelicula pelicula) {
 		pelicula.validar
 		session.save(pelicula) 
 		// ver save(entity, depth). Aquí por defecto depth es -1 que

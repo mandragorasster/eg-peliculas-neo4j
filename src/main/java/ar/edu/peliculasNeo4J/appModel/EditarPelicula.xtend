@@ -21,7 +21,7 @@ class EditarPelicula {
 	}
 	
 	def void aceptar() {
-		repoPeliculas.saveOrUpdatePelicula(pelicula)
+		repoPeliculas.actualizarPelicula(pelicula)
 	}
 	
 	def static EditarPelicula modoAlta() {

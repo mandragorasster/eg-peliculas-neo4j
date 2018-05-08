@@ -52,3 +52,21 @@ Como vemos, las modificaciones que hagas impactarán en el grafo de películas.
 
 > Una ventaja comparativa respecto a la conexión con el Driver nativo de Neo4J es que aquí podés navegar el grafo y utilizar la aplicación sin necesidad de cerrar una ventana u otra
 
+## Mejoras de la última versión
+
+- Ahora existe un método getSession() en AbstractRepoNeo4J para encapsular la instanciación de la sesión de Neo4J. Ese método lo aprovechan las subclases RepoActores y RepoPeliculas que hacen las búsquedas y actualizaciones.
+
+- El sessionFactory es único en toda la aplicación, así que es una variable static en AbstractRepoNeo4J.
+
+- La búsqueda ya no es en profundidad infinita, sino que considera: 0 para la búsqueda de lista (solamente el nodo, sin las relaciones) y 1 para la búsqueda puntual de una película (el nodo y sus relaciones directas, hasta ahí). Hay dos nuevas constantes en AbstractRepoNeo4J, lo que permite que la bajada de disco a memoria sea más performante.
+
+- Agregamos una búsqueda por año de lanzamiento de la película y un RadioSelector para conectar mediante OR o AND. Eso permite buscar por más de un criterio. Aparece una nueva abstracción PeliculaBusqueda que tiene validaciones, y es usado por el Repo de búsqueda de películas, que ahora construye un objeto [Filters](https://neo4j.com/docs/ogm-manual/current/reference/#reference:filters), que permite hacer búsquedas por más de un criterio. Lo único malo es que hay que devolver siempre un Filters compuesto, entonces se creó un filtro "que no filtra" para poder incorporarlo cuando solo haya un criterio de búsqueda.
+ 
+- La búsqueda por título de la película es case insensitive ahora, porque se modificó la expresión regular para que no considere mayúsculas y minúsculas: `"(?i)"`
+
+![video](video/nuevaBusqueda.gif)
+ 
+
+## Diagrama general de la solución
+
+![imagen](video/ArquitecturaPeliculasNeo4J.png)
