@@ -18,10 +18,9 @@ class RepoActores extends AbstractRepoNeo4J {
 	}
 
 	def List<Actor> getActores(String valor) {
-		val session = sessionFactory.openSession
 		val filtroPorNombreActor = 
 			new Filter("name", ComparisonOperator.MATCHES, "(?i).*" + valor + ".*")
-		return new ArrayList(session.loadAll(typeof(Actor), filtroPorNombreActor))
+		return new ArrayList(session.loadAll(typeof(Actor), filtroPorNombreActor, PROFUNDIDAD_BUSQUEDA_LISTA))
 	}
 	
 }

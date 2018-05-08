@@ -8,7 +8,9 @@ import org.uqbar.arena.bindings.NotNullObservable
 import org.uqbar.arena.layout.HorizontalLayout
 import org.uqbar.arena.widgets.Button
 import org.uqbar.arena.widgets.Label
+import org.uqbar.arena.widgets.NumericField
 import org.uqbar.arena.widgets.Panel
+import org.uqbar.arena.widgets.RadioSelector
 import org.uqbar.arena.widgets.TextBox
 import org.uqbar.arena.widgets.tables.Column
 import org.uqbar.arena.widgets.tables.Table
@@ -51,13 +53,27 @@ class BuscarPeliculasWindow extends SimpleWindow<BuscarPeliculas> {
 	}
 	
 	override protected createFormPanel(Panel mainPanel) {
-		new Label(mainPanel) => [
+		val panelBusqueda = new Panel(mainPanel)
+		val panelIzquierdo = new Panel(panelBusqueda)
+		new Label(panelIzquierdo) => [
 			text = "Ingrese el valor a buscar"
 			foreground = Color.BLUE
 		]
-		new TextBox(mainPanel) => [
-			width = 150
-			value <=> "valorABuscar"
+		new TextBox(panelIzquierdo) => [
+			width = 250
+			value <=> "peliculaBusqueda.valorABuscar"
+		]
+		new RadioSelector(panelBusqueda, "conectoresBusqueda") => [
+			value <=> "peliculaBusqueda.conectorBusqueda"
+		]
+		val panelDerecho = new Panel(panelBusqueda)
+		new Label(panelDerecho) => [
+			text = "Ingrese el año de lanzamiento a buscar"
+			foreground = Color.BLUE
+		]
+		new NumericField(panelDerecho) => [
+			width = 50
+			value <=> "peliculaBusqueda.anioABuscar"
 		]
 	}
 
@@ -70,7 +86,8 @@ class BuscarPeliculasWindow extends SimpleWindow<BuscarPeliculas> {
 	 * dispara la notificación a la grilla que funciona como Observer
 	 */
 	def protected createResultsGrid(Panel mainPanel) {
-		var table = new Table<Pelicula>(mainPanel, typeof(Pelicula)) => [
+		val panelGrilla = new Panel(mainPanel)
+		val table = new Table<Pelicula>(panelGrilla, typeof(Pelicula)) => [
 			numberVisibleRows = 12
 			items <=> "peliculas"
 			value <=> "peliculaSeleccionada"
