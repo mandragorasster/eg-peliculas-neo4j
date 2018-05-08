@@ -26,7 +26,7 @@ class RepoPeliculas extends AbstractRepoNeo4J {
 
 	def List<Pelicula> getPeliculas(String valor) {
 		val session = sessionFactory.openSession
-		val filtroPorTitulo = new Filter("title", ComparisonOperator.CONTAINING, valor)
+		val filtroPorTitulo = new Filter("title", ComparisonOperator.MATCHES, ".*" + valor + ".*")
 		return new ArrayList(session.loadAll(typeof(Pelicula), filtroPorTitulo))
 	}
 

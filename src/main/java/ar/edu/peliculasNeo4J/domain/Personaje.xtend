@@ -16,7 +16,7 @@ import org.uqbar.commons.model.exceptions.UserException
 class Personaje {
 	@Id @GeneratedValue
 	Long id
-	
+
 	List<String> roles
 	
 	@StartNode Actor actor
