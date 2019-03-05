@@ -13,7 +13,7 @@ import static extension ar.edu.peliculasNeo4J.repo.ActorToNodeConverter.*
 
 class RepoPeliculas extends AbstractRepoNeo4J {
 
-	private static RepoActores instance
+	static RepoActores instance
 	
 	def static RepoActores getInstance() {
 		if (instance === null) {

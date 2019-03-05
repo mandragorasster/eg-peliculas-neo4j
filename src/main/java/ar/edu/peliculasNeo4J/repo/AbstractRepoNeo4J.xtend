@@ -5,7 +5,7 @@ import org.neo4j.graphdb.GraphDatabaseService
 import org.neo4j.graphdb.Transaction
 
 @Accessors
-class AbstractRepoNeo4J {
+abstract class AbstractRepoNeo4J {
 
 	GraphDatabaseService graphDb
 
