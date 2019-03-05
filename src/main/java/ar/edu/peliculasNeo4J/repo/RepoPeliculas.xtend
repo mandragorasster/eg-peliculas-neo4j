@@ -11,7 +11,7 @@ import org.neo4j.ogm.cypher.Filters
 
 class RepoPeliculas extends AbstractRepoNeo4J {
 
-	private static RepoActores instance
+	static RepoActores instance
 
 	def static RepoActores getInstance() {
 		if (instance === null) {

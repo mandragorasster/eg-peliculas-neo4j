@@ -5,7 +5,7 @@ import org.neo4j.ogm.config.Configuration
 import org.neo4j.ogm.session.SessionFactory
 
 @Accessors
-class AbstractRepoNeo4J {
+abstract class AbstractRepoNeo4J {
 
 	/**
 	 * Al buscar muchos elementos, buscaremos por defecto traer solo la información de ese nodo, por eso 0.

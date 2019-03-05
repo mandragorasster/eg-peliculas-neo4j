@@ -26,7 +26,7 @@ class BuscarPeliculasWindow extends SimpleWindow<BuscarPeliculas> {
 		super(parent, model)
 	}
 
-	override def createMainTemplate(Panel mainPanel) {
+	override createMainTemplate(Panel mainPanel) {
 		title = "Buscador de Películas"
 		taskDescription = "Ingrese los parámetros de búsqueda"
 

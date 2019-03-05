@@ -8,7 +8,7 @@ import org.neo4j.ogm.cypher.Filter
 
 class RepoActores extends AbstractRepoNeo4J {
 
-	private static RepoActores instance
+	static RepoActores instance
 	
 	def static RepoActores getInstance() {
 		if (instance === null) {
