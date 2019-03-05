@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.uqbar</groupId>
@@ -6,44 +7,33 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<parent>
+		<artifactId>uqbar-parent-project</artifactId>
+		<version>1.9</version>
 		<groupId>org.uqbar-project</groupId>
-		<artifactId>arena-xtend-parent</artifactId>
-		<version>3.6.3</version>
 	</parent>
 
-	<repositories>
-		<repository>
-			<id>uqbar-wiki.org-releases</id>
-			<name>uqbar-wiki.org-releases</name>
-			<url>http://maven.uqbar.org/releases</url>
-		</repository>
-		<repository>
-			<snapshots />
-			<id>uqbar-wiki.org-snapshots</id>
-			<name>uqbar-wiki.org-snapshots</name>
-			<url>http://maven.uqbar.org/snapshots</url>
-		</repository>
-	</repositories>
-	
-	<dependencies>
-		<dependency>
-			<groupId>org.eclipse.xtend</groupId>
-			<artifactId>org.eclipse.xtend.lib</artifactId>
-			<version>2.17.0.M3</version>
-		</dependency>	
-		<dependency>
-			<groupId>org.neo4j</groupId>
-			<artifactId>neo4j</artifactId>
-			<version>3.5.3</version>
-		</dependency>
-		<dependency>
-			<groupId>org.neo4j.driver</groupId>
-			<artifactId>neo4j-java-driver</artifactId>
-			<version>1.7.2</version>
-		</dependency>
-	</dependencies>
+
+	<properties>
+		<arena.version>3.6.3</arena.version>
+		<xtend.version>2.17.0.M3</xtend.version>
+	</properties>
 
 	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.xtend</groupId>
+				<artifactId>xtend-maven-plugin</artifactId>
+				<version>${xtend.version}</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>compile</goal>
+							<goal>testCompile</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
 		<pluginManagement>
 			<plugins>
 				<plugin>
@@ -58,4 +48,57 @@
 			</plugins>
 		</pluginManagement>
 	</build>
+
+	<repositories>
+		<repository>
+			<id>uqbar-wiki.org-releases</id>
+			<name>uqbar-wiki.org-releases</name>
+			<url>http://maven.uqbar.org/releases</url>
+		</repository>
+		<repository>
+			<snapshots />
+			<id>uqbar-wiki.org-snapshots</id>
+			<name>uqbar-wiki.org-snapshots</name>
+			<url>http://maven.uqbar.org/snapshots</url>
+		</repository>
+	</repositories>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.eclipse.xtend</groupId>
+			<artifactId>org.eclipse.xtend.lib</artifactId>
+			<version>${xtend.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.uqbar-project</groupId>
+			<artifactId>uqbar-domain</artifactId>
+			<version>${arena.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.uqbar-project</groupId>
+			<artifactId>arena-jface</artifactId>
+			<version>${arena.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.uqbar-project</groupId>
+			<artifactId>arena-xtend</artifactId>
+			<version>${arena.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+		</dependency>
+		<dependency>
+			<groupId>org.neo4j</groupId>
+			<artifactId>neo4j</artifactId>
+			<version>3.5.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.neo4j.driver</groupId>
+			<artifactId>neo4j-java-driver</artifactId>
+			<version>1.7.2</version>
+		</dependency>
+	</dependencies>
+
 </project>
