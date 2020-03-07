@@ -20,7 +20,7 @@ class AgregarPersonaje {
 
 	new(Pelicula _pelicula) {
 		pelicula = _pelicula
-		repoActores = ApplicationContext.instance.getSingleton(typeof(RepoActores))
+		repoActores = ApplicationContext.instance.getSingleton(RepoActores)
 	}
 
 	def void aceptar() {

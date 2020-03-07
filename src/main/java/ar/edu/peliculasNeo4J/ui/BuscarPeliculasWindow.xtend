@@ -87,7 +87,7 @@ class BuscarPeliculasWindow extends SimpleWindow<BuscarPeliculas> {
 	 */
 	def protected createResultsGrid(Panel mainPanel) {
 		val panelGrilla = new Panel(mainPanel)
-		val table = new Table<Pelicula>(panelGrilla, typeof(Pelicula)) => [
+		val table = new Table<Pelicula>(panelGrilla, Pelicula) => [
 			numberVisibleRows = 12
 			items <=> "peliculas"
 			value <=> "peliculaSeleccionada"

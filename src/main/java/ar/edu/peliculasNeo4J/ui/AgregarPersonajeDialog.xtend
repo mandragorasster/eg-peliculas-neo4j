@@ -48,7 +48,7 @@ class AgregarPersonajeDialog extends Dialog<AgregarPersonaje> {
 			onClick [ | modelObject.buscarActor ]
 		]
 		
-		val table = new Table<Actor>(panelActor, typeof(Actor)) => [
+		val table = new Table<Actor>(panelActor, Actor) => [
 			numberVisibleRows = 10
 			width = 650
 			items <=> "actores"

@@ -90,7 +90,7 @@ class EditarPeliculaWindow extends Dialog<EditarPelicula> {
 		val panelDerecho = new Panel(mainPanel)
 
 		// Llevar a otra pantalla los personajes
-		val table = new Table<Personaje>(panelDerecho, typeof(Personaje)) => [
+		val table = new Table<Personaje>(panelDerecho, Personaje) => [
 			numberVisibleRows = 5
 			width = 650
 			items <=> "pelicula.personajes"
@@ -103,7 +103,7 @@ class EditarPeliculaWindow extends Dialog<EditarPelicula> {
 	}
 
 	def getRepoPeliculas() {
-		ApplicationContext.instance.getSingleton(typeof(Pelicula)) as RepoPeliculas
+		ApplicationContext.instance.getSingleton(Pelicula) as RepoPeliculas
 	}
 
 	def void createGridActions(Panel mainPanel) {

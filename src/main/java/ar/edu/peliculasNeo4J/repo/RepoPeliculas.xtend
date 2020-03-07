@@ -31,7 +31,7 @@ class RepoPeliculas extends AbstractRepoNeo4J {
 	def List<Pelicula> getPeliculas(PeliculaBusqueda peliculaBusqueda) {
 		// En getPeliculas queremos hacer la búsqueda con profundidad (depth) = 0
 		// para traer únicamente el nodo película sin la relación
-		return new ArrayList(session.loadAll(typeof(Pelicula), filtroPeliculas(peliculaBusqueda), PROFUNDIDAD_BUSQUEDA_LISTA))
+		return new ArrayList(session.loadAll(Pelicula, filtroPeliculas(peliculaBusqueda), PROFUNDIDAD_BUSQUEDA_LISTA))
 	}
 	
 	def Filters filtroPeliculas(PeliculaBusqueda peliculaBusqueda) {
@@ -55,7 +55,7 @@ class RepoPeliculas extends AbstractRepoNeo4J {
 	}
 
 	def Pelicula getPelicula(Long id) {
-		session.load(typeof(Pelicula), id, PROFUNDIDAD_BUSQUEDA_CONCRETA)
+		session.load(Pelicula, id, PROFUNDIDAD_BUSQUEDA_CONCRETA)
 	}
 	
 	def void eliminarPelicula(Pelicula pelicula) {
