@@ -1,5 +1,7 @@
 # Películas - Proyecto Xtend contra una base Neo4J
 
+> **Nota**: este ejemplo ha sido deprecado desde la cursada 2020, se recomienda ver el branch `ogm`
+
 [![Build Status](https://travis-ci.org/uqbar-project/eg-peliculas-neo4j.svg?branch=master)](https://travis-ci.org/uqbar-project/eg-peliculas-neo4j)
 
 ## Objetivo

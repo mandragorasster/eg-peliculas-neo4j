@@ -10,8 +10,8 @@ import org.uqbar.commons.applicationContext.ApplicationContext
 class PeliculasApplication extends Application {
 	
 	static def void main(String[] args) {
-		ApplicationContext.instance.configureSingleton(typeof(RepoPeliculas), new RepoPeliculas)
-		ApplicationContext.instance.configureSingleton(typeof(RepoActores), RepoActores.instance) 
+		ApplicationContext.instance.configureSingleton(RepoPeliculas, new RepoPeliculas)
+		ApplicationContext.instance.configureSingleton(RepoActores, RepoActores.instance) 
 		new PeliculasApplication().start()
 	}
 

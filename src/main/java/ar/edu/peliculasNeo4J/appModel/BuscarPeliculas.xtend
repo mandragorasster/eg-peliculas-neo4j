@@ -19,7 +19,7 @@ class BuscarPeliculas {
 	
 	new() {
 		init()
-		repoPeliculas = ApplicationContext.instance.getSingleton(typeof(RepoPeliculas))
+		repoPeliculas = ApplicationContext.instance.getSingleton(RepoPeliculas)
 	}
 	
 	def init() {

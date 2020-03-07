@@ -17,7 +17,7 @@ class EditarPelicula {
 	
 	
 	new() {
-		repoPeliculas = ApplicationContext.instance.getSingleton(typeof(RepoPeliculas))
+		repoPeliculas = ApplicationContext.instance.getSingleton(RepoPeliculas)
 	}
 	
 	def void aceptar() {

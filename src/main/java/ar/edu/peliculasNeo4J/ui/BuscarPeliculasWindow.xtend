@@ -70,7 +70,7 @@ class BuscarPeliculasWindow extends SimpleWindow<BuscarPeliculas> {
 	 * dispara la notificación a la grilla que funciona como Observer
 	 */
 	def protected createResultsGrid(Panel mainPanel) {
-		var table = new Table<Pelicula>(mainPanel, typeof(Pelicula)) => [
+		var table = new Table<Pelicula>(mainPanel, Pelicula) => [
 			numberVisibleRows = 12
 			items <=> "peliculas"
 			value <=> "peliculaSeleccionada"
