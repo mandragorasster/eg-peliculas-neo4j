@@ -21,14 +21,11 @@ ACTED_IN con atributos roles que terminan trasladándose al modelo de objetos co
 * Instalar la última versión de **Neo4j** con **Docker**
 
 ```bash
-$ docker pull neo4j
-
-$ docker login   # ingresar Username y Password
-
-$ docker run \
->     --publish=7474:7474 --publish=7687:7687 \
->     --volume=$HOME/neo4j/data:/data \
->     neo4j
+docker pull neo4j:4.0.2
+docker run \
+     --publish=7474:7474 --publish=7687:7687 \
+     --volume=$HOME/neo4j/data:/data \
+     neo4j:4.0.2
 ```
 
 * Abrir el Navegador de Neo4J Desktop o bien ingresar manualmente a la URL: http://localhost:7474
